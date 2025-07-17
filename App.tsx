@@ -170,7 +170,7 @@ const memorialData: MemorialData[] = [
     name: "Roberto Simonsen",
     contribution:
       "Como presidente da FIESP e líder da indústria nacional, foi o principal idealizador e articulador político que liderou a criação do SENAI, sendo a figura fundamental para a sua fundação em 1942.",
-    imageUrl: "/media/roberto_simonsen.jpg", // corrigido
+    imageUrl: "/media/ROBERTO_SIMONSEN.jpg", // corrigido
   },
   {
     name: "Engenheiro Roberto Mange",
