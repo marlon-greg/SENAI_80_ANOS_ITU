@@ -239,23 +239,23 @@ const TimelineItem: React.FC<{ data: TimelineItemData; reverse?: boolean }> = ({
 }) => {
   const { year, title, summary, imageUrl } = data;
 
-  const contentOrder = reverse ? "md:flex-row-reverse" : "md:flex-row";
-
+  // Em telas grandes, alterna a ordem; em telas pequenas, imagem sempre acima do texto
   return (
-    <div className={`flex ${contentOrder} items-center my-12`}>
-      <div className="md:w-1/2 p-4 md:p-8">
+    <div className="flex flex-col md:flex-row md:items-center my-12">
+      <div className="w-full md:w-1/2 p-4 order-1 md:order-none">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="rounded-lg shadow-2xl object-cover w-full h-56 sm:h-72 md:h-80 mb-4 md:mb-0"
+          style={{ maxHeight: 320, minHeight: 180, objectFit: "cover" }}
+        />
+      </div>
+      <div className="w-full md:w-1/2 p-4 flex flex-col justify-center">
         <div className="flex items-baseline space-x-4">
           <span className="text-4xl font-bold text-red-500">{year}</span>
           <h3 className="text-2xl font-bold text-white">{title}</h3>
         </div>
         <p className="mt-4 text-slate-300 leading-relaxed">{summary}</p>
-      </div>
-      <div className="md:w-1/2 p-4">
-        <img
-          src={imageUrl}
-          alt={title}
-          className="rounded-lg shadow-2xl object-cover w-full h-64 md:h-80"
-        />
       </div>
     </div>
   );
@@ -305,36 +305,33 @@ const App: React.FC = () => {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center h-16">
             <div className="flex items-center space-x-6 text-sm sm:text-base">
-              <a
-                href="#intro"
-                className="text-slate-300 hover:text-white transition-colors duration-300"
-              >
-                Introdução
-              </a>
-              <a
-                href="#timeline"
-                className="text-slate-300 hover:text-white transition-colors duration-300"
-              >
-                Linha do Tempo
-              </a>
-              <a
-                href="#document"
-                className="text-slate-300 hover:text-white transition-colors duration-300"
-              >
-                Ata de 1946
-              </a>
-              <a
-                href="#today"
-                className="text-slate-300 hover:text-white transition-colors duration-300"
-              >
-                Hoje
-              </a>
-              <a
-                href="#memorial"
-                className="text-slate-300 hover:text-white transition-colors duration-300"
-              >
-                Memorial
-              </a>
+              {[
+                { href: "#intro", label: "Introdução" },
+                { href: "#timeline", label: "Linha do Tempo" },
+                { href: "#document", label: "Ata de 1946" },
+                { href: "#today", label: "Hoje" },
+                { href: "#memorial", label: "Memorial" },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-slate-300 hover:text-red-700 focus:text-red-700 active:text-red-900 transition-colors duration-300 px-2 py-1 rounded"
+                  style={{
+                    transition: "background 0.2s, color 0.2s",
+                  }}
+                  onMouseDown={(e) =>
+                    e.currentTarget.classList.add("bg-red-900")
+                  }
+                  onMouseUp={(e) =>
+                    e.currentTarget.classList.remove("bg-red-900")
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget.classList.remove("bg-red-900")
+                  }
+                >
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </nav>
