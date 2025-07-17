@@ -22,28 +22,28 @@ const timelineData: TimelineItemData[] = [
     title: "A Semente do Futuro",
     summary:
       "O comendador Joaquim Bernardo Borges deixa em testamento parte de sua fortuna à Irmandade da Santa Casa de Misericórdia, com a missão de criar uma escola profissionalizante gratuita para os jovens de Itu.",
-    imageUrl: "media/BORGES IBAO.jpg",
+    imageUrl: "/media/BORGES IBAO.jpg", // corrigido
   },
   {
     year: "1924",
     title: "Nasce o IBAO",
     summary:
       "A Irmandade inaugura o Instituto Borges de Artes e Ofícios (IBAO), materializando o sonho da educação profissional na cidade e fincando as raízes do que viria a ser o SENAI.",
-    imageUrl: "media/ibao.jpg",
+    imageUrl: "/media/ibao.jpg", // corrigido
   },
   {
     year: "1946",
     title: "A Parceria Histórica",
     summary:
       "É firmado o acordo oficial entre o IBAO e o recém-criado SENAI. O SENAI passa a ministrar seus cursos nas instalações do Instituto, unindo a tradição local à metodologia de uma instituição nacional.",
-    imageUrl: "media/curso.jpg",
+    imageUrl: "/media/curso.jpg", // corrigido
   },
   {
     year: "Hoje",
     title: "Centro de Inovação",
     summary:
       'A Escola SENAI "Ítalo Bologna" se consolida como um polo de tecnologia, formando profissionais para a Indústria 4.0 e sendo referência em tecnologia assistiva.',
-    imageUrl: "media/SENAI_ITU.jpeg",
+    imageUrl: "/media/SENAI_ITU.jpeg", // corrigido
   },
 ];
 
@@ -125,9 +125,18 @@ Havendo número legal, o Irmão Provedor declara aberta a sessão e passa a comu
 ];
 
 const leadershipTeam = [
-  { role: "Diretor de Unidade de Formação Profissional", name: "Helvecio Siqueira de Oliveira" },
-  { role: "Coordenador Administrativo e Financeiro", name: "Kelen Fernanda de Oliveira" },
-  { role: "Coordenador de Atividades Técnicas", name: "Alexandre Rodrigues Matias Rigoni" },
+  {
+    role: "Diretor de Unidade de Formação Profissional",
+    name: "Helvecio Siqueira de Oliveira",
+  },
+  {
+    role: "Coordenador Administrativo e Financeiro",
+    name: "Kelen Fernanda de Oliveira",
+  },
+  {
+    role: "Coordenador de Atividades Técnicas",
+    name: "Alexandre Rodrigues Matias Rigoni",
+  },
   {
     role: "Coordenador de Atividades Pedagógicas",
     name: "Julio Cesar Torres Martins",
@@ -155,25 +164,25 @@ const memorialData: MemorialData[] = [
     name: "Comendador Joaquim Bernardo Borges",
     contribution:
       "O visionário cujo legado e ato de filantropia deram o passo inicial para a educação profissional em Itu.",
-    imageUrl: "media/iscm-ibao-100-anos-07.jpg",
+    imageUrl: "/media/iscm-ibao-100-anos-07.jpg", // corrigido
   },
   {
     name: "Roberto Simonsen",
     contribution:
       "Como presidente da FIESP e líder da indústria nacional, foi o principal idealizador e articulador político que liderou a criação do SENAI, sendo a figura fundamental para a sua fundação em 1942.",
-    imageUrl: "media/roberto_simonsen.jpg",
+    imageUrl: "/media/roberto_simonsen.jpg", // corrigido
   },
   {
     name: "Engenheiro Roberto Mange",
     contribution:
       "Como Diretor Regional do SENAI-SP na época, foi a figura chave do lado do SENAI que assinou e viabilizou o acordo histórico de 1946.",
-    imageUrl: "media/ROBERTO_MANGE.jpg",
+    imageUrl: "/media/ROBERTO_MANGE.jpg", // corrigido
   },
   {
     name: "Ítalo Bologna",
     contribution:
       "Como Diretor Regional do SENAI-SP e, posteriormente, Diretor do Departamento Nacional, foi uma figura central na expansão e consolidação do SENAI, dando continuidade ao legado de Roberto Mange com a criação de novas escolas.",
-    imageUrl: "media/ITALO_BOLOGNA.jpg",
+    imageUrl: "/media/ITALO_BOLOGNA.jpg", // corrigido
   },
 ];
 
@@ -268,11 +277,13 @@ const MemorialCard: React.FC<{ data: MemorialData }> = ({ data }) => (
 );
 
 // Section Wrapper
-const Section: React.FC<{
+interface SectionProps {
   id: string;
   children: ReactNode;
   className?: string;
-}> = ({ id, children, className }) => (
+}
+
+const Section: React.FC<SectionProps> = ({ id, children, className }) => (
   <section id={id} className={`py-16 sm:py-24 w-full ${className}`}>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
   </section>
@@ -335,14 +346,12 @@ const App: React.FC = () => {
           className="relative text-center py-24 sm:py-32 px-4 bg-cover bg-center"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, rgba(2, 6, 23, 0.7), rgba(15, 23, 42, 1)), url('media/SENAI ITU - DRONE 1X1 - 2.png')",
+              "linear-gradient(to bottom, rgba(2, 6, 23, 0.7), rgba(15, 23, 42, 1)), url('/media/SENAI ITU - DRONE 1X1 - 2.png')", // corrigido
           }}
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
             SENAI de Itu: "Ítalo Bologna"{" "}
-            <span className="block text-red-500">
-              Do IBAO para à Indústria
-            </span>
+            <span className="block text-red-500">Do IBAO para à Indústria</span>
           </h1>
         </div>
 
@@ -438,7 +447,10 @@ const App: React.FC = () => {
                 <br />
                 Telefone: (11) 2396-1999
                 <br />
-                Site: <a href="https://sp.senai.br/unidade/itu/">https://sp.senai.br/unidade/itu/</a>
+                Site:{" "}
+                <a href="https://sp.senai.br/unidade/itu/">
+                  https://sp.senai.br/unidade/itu/
+                </a>
               </p>
               <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
                 <iframe
