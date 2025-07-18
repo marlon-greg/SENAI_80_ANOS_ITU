@@ -141,6 +141,10 @@ const leadershipTeam = [
     role: "Coordenador de Atividades Pedagógicas",
     name: "Julio Cesar Torres Martins",
   },
+   {
+    role: "Coordenador de Relacionamento com a Indústria",
+    name: "Fabio Luiz Cabrero",
+  },
   {
     role: "Orientador de Prática Profissional",
     name: "Fabricio Luis Dos Santos",
@@ -302,9 +306,9 @@ const App: React.FC = () => {
   return (
     <div className="bg-slate-900 text-slate-200 font-sans leading-normal tracking-tight">
       <header className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-sm shadow-md">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center h-16">
-            <div className="flex items-center space-x-6 text-sm sm:text-base">
+            <div className="flex overflow-x-auto whitespace-nowrap space-x-2 sm:space-x-6 text-xs sm:text-base scrollbar-hide">
               {[
                 { href: "#intro", label: "Introdução" },
                 { href: "#timeline", label: "Linha do Tempo" },
