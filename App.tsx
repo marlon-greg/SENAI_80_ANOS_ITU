@@ -146,6 +146,10 @@ const leadershipTeam = [
     name: "Fábio Luiz Cabrero",
   },
   {
+    role: "Líder Técnico",
+    name: "Hudson Costa Batista Brisola",
+  },
+  {
     role: "Orientador de Prática Profissional",
     name: "Fabrício Luis Dos Santos",
   },
