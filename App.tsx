@@ -143,7 +143,7 @@ const leadershipTeam = [
   },
    {
     role: "Coordenador de Relacionamento com a Indústria",
-    name: "Fabio Luiz Cabrero",
+    name: "Fábio Luiz Cabrero",
   },
   {
     role: "Orientador de Prática Profissional",
