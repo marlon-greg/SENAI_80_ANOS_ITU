@@ -127,7 +127,7 @@ Havendo número legal, o Irmão Provedor declara aberta a sessão e passa a comu
 const leadershipTeam = [
   {
     role: "Diretor de Unidade de Formação Profissional",
-    name: "Helvecio Siqueira de Oliveira",
+    name: "Helvécio Siqueira de Oliveira",
   },
   {
     role: "Coordenador Administrativo e Financeiro",
@@ -147,7 +147,7 @@ const leadershipTeam = [
   },
   {
     role: "Orientador de Prática Profissional",
-    name: "Fabricio Luis Dos Santos",
+    name: "Fabrício Luis Dos Santos",
   },
   {
     role: "Orientador de Prática Profissional",
@@ -159,7 +159,7 @@ const leadershipTeam = [
   },
   {
     role: "Orientador de Prática Profissional",
-    name: "Joao Vitor Augusto",
+    name: "João Vitor Augusto",
   },
 ];
 
